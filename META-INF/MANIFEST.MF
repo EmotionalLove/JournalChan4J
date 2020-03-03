@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: me.someonelove.csc150.journalchan4j.Main
+
