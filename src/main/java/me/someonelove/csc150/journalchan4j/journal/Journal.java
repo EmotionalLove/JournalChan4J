@@ -2,17 +2,18 @@ package me.someonelove.csc150.journalchan4j.journal;
 
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
-public class Journal {
+public class Journal implements Serializable {
 
     private String id;
     private long timePosted;
     private String body;
     private String author;
 
-    private boolean needsRefresh;
+    private transient boolean needsRefresh;
 
     public Journal(String id, String author, String body, long timePosted) {
         this.id = id;
