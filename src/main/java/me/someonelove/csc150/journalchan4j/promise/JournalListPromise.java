@@ -19,11 +19,6 @@ public class JournalListPromise extends Promise<Journal[]> {
         this.amount = amount;
     }
 
-//    @Override
-//    public void later(Consumer<Journal[]> p) {
-//
-//    }
-
     @Override
     public Journal[] now() {
         try {

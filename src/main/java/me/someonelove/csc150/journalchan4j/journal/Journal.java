@@ -9,10 +9,16 @@ import java.util.UUID;
 public class Journal implements Serializable {
 
     private String id;
+    /**
+     * Time posted in milliseconds from Jan 1 1970
+     */
     private long timePosted;
     private String body;
     private String author;
 
+    /**
+     * Indicates whether this Journal needs to be refreshed.
+     */
     private transient boolean needsRefresh;
 
     public Journal(String id, String author, String body, long timePosted) {
@@ -56,6 +62,9 @@ public class Journal implements Serializable {
         return this.body != null && !this.body.isEmpty();
     }
 
+    /**
+     * Serialise the {@link Journal} into a valid {@link JSONObject}
+     */
     public JSONObject serialise() {
         JSONObject obj = new JSONObject();
         if (author != null) obj.put("Author", this.author);

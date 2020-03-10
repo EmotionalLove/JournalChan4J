@@ -10,6 +10,9 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Requests a JSON-formatted {@link Journal} to be published via a POST request.
+ */
 public class PublishPromise extends Promise<String> {
 
     private Journal toPublish;

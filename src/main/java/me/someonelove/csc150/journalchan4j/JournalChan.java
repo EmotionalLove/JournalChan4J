@@ -29,7 +29,7 @@ public class JournalChan {
      * @throws IllegalArgumentException If the journal is invalid.
      */
     public final Promise<String> publishNewJournal(Journal journal)  throws IllegalArgumentException {
-        if (!journal.validate()) {
+        if (journal == null || !journal.validate()) {
             throw new IllegalArgumentException("Journal body must be non-null");
         }
         return new PublishPromise(baseUrl, journal);
